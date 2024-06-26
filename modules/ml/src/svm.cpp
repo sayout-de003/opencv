@@ -1460,6 +1460,10 @@ public:
                         int cj = class_ranges[j+1] - class_ranges[j];
                         if( nu*(ci + cj)*0.5 > std::min( ci, cj ) )
                             // TODO: add some diagnostic
+                            // Add diagnostic message
+                            std::cerr << "nu is not feasible for classes " << i << " and " << j << ": "
+                            << "nu = " << nu << ", ci = " << ci << ", cj = " << cj << std::endl;
+                            
                             return false;
                     }
                 }
